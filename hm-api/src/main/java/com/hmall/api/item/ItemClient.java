@@ -18,7 +18,7 @@ import java.util.List;
  * @description 商品服务Feign接口
  * @date 2024/8/3 16:21
  */
-@FeignClient(name="item-service",path = "/items")
+@FeignClient(name="item-service",path = "/items",fallbackFactory = ItemClientFallbackFactory.class)
 public interface ItemClient {
 
     @GetMapping
