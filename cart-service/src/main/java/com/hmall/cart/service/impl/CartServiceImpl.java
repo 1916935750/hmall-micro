@@ -1,10 +1,8 @@
 package com.hmall.cart.service.impl;
 
 import cn.hutool.core.util.StrUtil;
-
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-
 import com.hmall.api.item.ItemClient;
 import com.hmall.api.item.dto.ItemDTO;
 import com.hmall.cart.domain.dto.CartFormDTO;
@@ -16,12 +14,13 @@ import com.hmall.common.exception.BizIllegalException;
 import com.hmall.common.utils.BeanUtils;
 import com.hmall.common.utils.CollUtils;
 import com.hmall.common.utils.UserContext;
-
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-import org.springframework.web.client.RestTemplate;
 
-import java.util.*;
+import java.util.Collection;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
@@ -36,11 +35,6 @@ import java.util.stream.Collectors;
 @RequiredArgsConstructor
 public class CartServiceImpl extends ServiceImpl<CartMapper, Cart> implements ICartService {
 
-    // private final IItemService itemService;
-
-    private final RestTemplate restTemplate;
-
-    // private final DiscoveryClient discoveryClient;
 
     private final ItemClient itemClient;
 
